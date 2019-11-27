@@ -1,3 +1,5 @@
+meteorBabelHelpers = Package.modules.meteorBabelHelpers
+
 # Comparing arrays of components by reference. This might not be really necessary
 # to do, because all operations we officially support modify length of the array
 # (add a new component or remove an old one). But if somebody is modifying the
