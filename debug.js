@@ -62,3 +62,4 @@ BaseComponentDebug = class BaseComponentDebug {
     this.dumpComponentSubtree(this.componentRoot(component), (c) => c === component);
   }
 };
+
