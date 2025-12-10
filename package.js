@@ -1,17 +1,17 @@
 Package.describe({
-  name: 'peerlibrary:base-component',
+  name: 'sylido:base-component',
   summary: "Base component for reusable Meteor components",
-  version: '0.17.1',
-  git: 'https://github.com/peerlibrary/meteor-base-component.git',
+  version: '0.18.0',
+  git: 'https://github.com/sylido/meteor-base-component.git',
   documentation: null
 });
 
 Package.onUse(function (api) {
-  api.versionsFrom('METEOR@1.8.1');
+  api.versionsFrom(['2.3', '3.0']);
 
   // Core dependencies.
   api.use([
-    'coffeescript@2.4.1',
+    'ecmascript',
     'reactive-var',
     'tracker',
     'underscore'
@@ -19,9 +19,9 @@ Package.onUse(function (api) {
 
   // 3rd party dependencies.
   api.use([
-    'peerlibrary:assert@0.3.0',
-    'peerlibrary:reactive-field@0.6.0',
-    'peerlibrary:computed-field@0.10.0'
+    'sylido:assert@0.4.0',
+    'sylido:reactive-field@0.7.0',
+    'sylido:computed-field@0.11.0'
   ]);
 
   api.export('BaseComponent');
@@ -29,32 +29,33 @@ Package.onUse(function (api) {
   api.export('BaseComponentDebug');
 
   api.addFiles([
-    'lib.coffee',
-    'debug.coffee'
+    'lib.js',
+    'debug.js'
   ]);
 });
 
-Package.onTest(function (api) {
-  // Core dependencies.
-  api.use([
-    'coffeescript@2.4.1',
-    'templating@1.3.2',
-    'jquery@1.11.11',
-    'reactive-var',
-    'tracker'
-  ]);
-
-  // Internal dependencies.
-  api.use([
-    'peerlibrary:base-component'
-  ]);
-
-  // 3rd party dependencies.
-  api.use([
-    'peerlibrary:classy-test@0.4.0'
-  ]);
-
-  api.addFiles([
-    'tests.coffee'
-   ], 'client');
-});
+// Tests commented out - were using CoffeeScript
+// Package.onTest(function (api) {
+//   // Core dependencies.
+//   api.use([
+//     'ecmascript',
+//     'templating',
+//     'jquery',
+//     'reactive-var',
+//     'tracker'
+//   ]);
+//
+//   // Internal dependencies.
+//   api.use([
+//     'sylido:base-component'
+//   ]);
+//
+//   // 3rd party dependencies.
+//   api.use([
+//     'peerlibrary:classy-test@0.4.0'
+//   ]);
+//
+//   api.addFiles([
+//     'tests.js'
+//    ], 'client');
+// });
